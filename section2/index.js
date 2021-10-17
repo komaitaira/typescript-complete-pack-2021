@@ -68,3 +68,11 @@ var anotherAdd = function (num1, num2) {
 };
 // アロー関数の場合
 var doubleNumber = function (num) { return num * 2; };
+// コールバック関数の型はこう書く
+function doubleAndHandle(num, cb) {
+    var doubleNum = cb(num * 2);
+    console.log(doubleNum);
+}
+doubleAndHandle(21, function (doubleNum) {
+    return doubleNum;
+});

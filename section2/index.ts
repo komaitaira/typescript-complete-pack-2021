@@ -90,3 +90,12 @@ const anotherAdd: (n1: number, n2: number) => number = function (num1, num2) {
 
 // アロー関数の場合
 const doubleNumber: (num: number) => number = num => num * 2;
+
+// コールバック関数の型はこう書く
+function doubleAndHandle(num: number, cb: (num: number) => number): void {
+    const doubleNum = cb(num * 2);
+    console.log(doubleNum);
+}
+doubleAndHandle(21, doubleNum => {
+    return doubleNum;
+})
