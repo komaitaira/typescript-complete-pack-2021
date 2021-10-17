@@ -47,3 +47,8 @@ const coffee = {
     size: CoffeeSize.TALL
 }
 coffee.size = CoffeeSize.VENTI;
+
+// Union型を使って複数の型を使う
+let unionType: number | string = 10;
+unionType = 'hello';
+let unionTypes: (number | string)[] = [21, 'hello'];

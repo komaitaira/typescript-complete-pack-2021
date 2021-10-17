@@ -42,3 +42,7 @@ var coffee = {
     size: CoffeeSize.TALL
 };
 coffee.size = CoffeeSize.VENTI;
+// Union型を使って複数の型を使う
+var unionType = 10;
+unionType = 'hello';
+var unionTypes = [21, 'hello'];
