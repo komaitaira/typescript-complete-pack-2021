@@ -75,3 +75,10 @@ const cloth: {
 function add(num1: number, num2: number): number {
     return num1 + num2;
 }
+
+// 関数の戻り値にvoidを使う。戻り値がない場合は基本的にはvoidを指定してあげる。
+function sayHello(): void {
+    console.log('Hello!');
+}
+
+console.log(sayHello());
