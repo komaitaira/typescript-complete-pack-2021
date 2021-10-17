@@ -48,7 +48,6 @@ unionType = 'hello';
 var unionTypes = [21, 'hello'];
 // Literal型を使うと特定の値のみが許容されるようになる
 var apple = 'apple';
-// またUnion型と組み合わせて特定の値のみを受け付けるようにもできる
 var clothSize = 'large';
 var cloth = {
     color: 'white',
