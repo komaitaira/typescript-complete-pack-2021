@@ -6,3 +6,12 @@ let negative = -0.12;
 let single = 'hello';
 let double = "hello";
 let back = `hello`;
+
+// オブジェクトに型をつける方法（こちらも基本的には明示的に型注釈をつける必要はない。tsの型推論に任せる）
+const person = {
+    name: {
+        first: 'Jack',
+        last: 'Smith'
+    },
+    age: 21
+}
