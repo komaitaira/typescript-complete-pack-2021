@@ -52,3 +52,15 @@ coffee.size = CoffeeSize.VENTI;
 let unionType: number | string = 10;
 unionType = 'hello';
 let unionTypes: (number | string)[] = [21, 'hello'];
+
+// Literal型を使うと特定の値のみが許容されるようになる
+const apple = 'apple';
+// またUnion型と組み合わせて特定の値のみを受け付けるようにもできる
+let clothSize: 'small' | 'medium' | 'large' = 'large';
+const cloth: {
+    color: string,
+    size: 'small' | 'medium' | 'large'
+} = {
+    color: 'white',
+    size: 'medium'
+}
