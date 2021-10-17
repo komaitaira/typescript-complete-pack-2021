@@ -53,3 +53,7 @@ var cloth = {
     color: 'white',
     size: 'medium'
 };
+// 関数に型を適応させる場合、引数の型注釈は必須（指定しないとany型になる）、戻り値の型注釈は任意（冗長にならないのであれば付けたほうがベター）
+function add(num1, num2) {
+    return num1 + num2;
+}
