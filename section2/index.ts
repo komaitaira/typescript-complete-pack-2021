@@ -15,3 +15,6 @@ const person = {
     },
     age: 21
 }
+
+// 配列に型をつけるArray型はこのように記載する
+const fruits = ['Apple', 'Banana', 'Grape'];

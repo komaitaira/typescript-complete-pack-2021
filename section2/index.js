@@ -14,3 +14,5 @@ var person = {
     },
     age: 21
 };
+// 配列に型をつけるArray型はこのように記載する
+var fruits = ['Apple', 'Banana', 'Grape'];
