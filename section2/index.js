@@ -16,3 +16,9 @@ var person = {
 };
 // 配列に型をつけるArray型はこのように記載する
 var fruits = ['Apple', 'Banana', 'Grape'];
+// Tuple型はこのように書く。このように書くことでindexに合った型を定義することができる。
+var book = ['business', 1500, false];
+book.push(21); // pushで値を追加することはできる。
+// ただし、bookという変数はあくまでも[string, number, boolean]の型なので、下記のように参照する時はエラーを出してくれる
+console.log(book); // [ 'business', 1500, false, 21 ]
+// console.log(book[3]) // これはエラーとなる
