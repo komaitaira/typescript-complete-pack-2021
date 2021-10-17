@@ -22,3 +22,23 @@ book.push(21); // pushで値を追加することはできる。
 // ただし、bookという変数はあくまでも[string, number, boolean]の型なので、下記のように参照する時はエラーを出してくれる
 console.log(book); // [ 'business', 1500, false, 21 ]
 // console.log(book[3]) // これはエラーとなる
+// enum型はこのような形で記載する
+// enum CoffeeSize {
+//     SHORT = 'SHORT',
+//     TALL = 'TALL',
+//     GRANDE = 'GRANDE',
+//     VENTI = 'VENTI'
+// }
+// このような形で記載もできる。この場合はそれぞれに数字が割り当てられる。文字列よりはメモリの節約になるので、わざわざ文字列じゃなくてもいい場合はこちらを使うといいかも
+var CoffeeSize;
+(function (CoffeeSize) {
+    CoffeeSize[CoffeeSize["SHORT"] = 0] = "SHORT";
+    CoffeeSize[CoffeeSize["TALL"] = 1] = "TALL";
+    CoffeeSize[CoffeeSize["GRANDE"] = 2] = "GRANDE";
+    CoffeeSize[CoffeeSize["VENTI"] = 3] = "VENTI";
+})(CoffeeSize || (CoffeeSize = {}));
+var coffee = {
+    hot: true,
+    size: CoffeeSize.TALL
+};
+coffee.size = CoffeeSize.VENTI;
