@@ -82,3 +82,11 @@ function sayHello(): void {
 }
 
 console.log(sayHello());
+
+// 関数式の場合は下記のように書く
+const anotherAdd: (n1: number, n2: number) => number = function (num1, num2) {
+    return num1 + num2;
+}
+
+// アロー関数の場合
+const doubleNumber: (num: number) => number = num => num * 2;

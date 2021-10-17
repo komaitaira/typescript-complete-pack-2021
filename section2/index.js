@@ -62,3 +62,9 @@ function sayHello() {
     console.log('Hello!');
 }
 console.log(sayHello());
+// 関数式の場合は下記のように書く
+var anotherAdd = function (num1, num2) {
+    return num1 + num2;
+};
+// アロー関数の場合
+var doubleNumber = function (num) { return num * 2; };
