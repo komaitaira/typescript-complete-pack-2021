@@ -76,3 +76,14 @@ function doubleAndHandle(num, cb) {
 doubleAndHandle(21, function (doubleNum) {
     return doubleNum;
 });
+// unknown型はany型と同じく、何でも入れることができるが、参照する時には型を保証しなければならない
+var unknownInput;
+var anyInput;
+var text;
+unknownInput = 'hello';
+unknownInput = 21;
+unknownInput = true;
+text = anyInput;
+if (typeof unknownInput === 'string') {
+    text = unknownInput;
+}

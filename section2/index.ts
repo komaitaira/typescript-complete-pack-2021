@@ -99,3 +99,15 @@ function doubleAndHandle(num: number, cb: (num: number) => number): void {
 doubleAndHandle(21, doubleNum => {
     return doubleNum;
 })
+
+// unknown型はany型と同じく、何でも入れることができるが、参照する時には型を保証しなければならない
+let unknownInput: unknown;
+let anyInput: any;
+let text: string;
+unknownInput = 'hello';
+unknownInput = 21;
+unknownInput = true;
+text = anyInput;
+if (typeof unknownInput === 'string') {
+    text = unknownInput;
+}
