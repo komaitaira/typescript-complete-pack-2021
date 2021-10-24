@@ -87,3 +87,8 @@ text = anyInput;
 if (typeof unknownInput === 'string') {
     text = unknownInput;
 }
+// never型は決して何も返さない時に使用する
+function error(message) {
+    throw new Error(message);
+}
+console.log(error('This is an error'));
