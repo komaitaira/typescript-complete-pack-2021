@@ -3,6 +3,15 @@ class Person {
     constructor(initName: string) {
         this.name = initName;
     }
+
+    greeting(this: { name: string }) {
+        console.log(`Hello My Name is ${this.name}`);
+    }
 }
-const quill = new Person('Quill');
-console.log(quill);
+const quill = new Person("Quill");
+quill.greeting();
+const anotherQuill = {
+    name: 'anotherQuill',
+    anotherGreeting: quill.greeting
+}
+anotherQuill.anotherGreeting()
