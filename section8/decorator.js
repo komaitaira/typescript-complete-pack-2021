@@ -5,17 +5,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function Logging(constructor) {
-    console.log("Logging...");
-    console.log(constructor);
+function Logging(message) {
+    return function (constructor) {
+        console.log(message);
+        console.log(constructor);
+    };
+}
+function Component(template, selector) {
+    return function (constructor) {
+        var mountedElement = document.querySelector(selector);
+        var instance = new constructor();
+        if (mountedElement) {
+            mountedElement.innerHTML = template;
+            mountedElement.querySelector("h1").textContent = instance.name;
+        }
+    };
 }
 var User = /** @class */ (function () {
     function User() {
-        this.name = 'Quill';
+        this.name = "Quill";
         console.log("User was created!");
     }
     User = __decorate([
-        Logging
+        Component("<h1>{{name}}</h1>", "#app"),
+        Logging("Logging User")
     ], User);
     return User;
 }());
