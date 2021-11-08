@@ -6,14 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 function Logging(message) {
+    console.log("Logging Factory");
     return function (constructor) {
         console.log(message);
         console.log(constructor);
     };
 }
 function Component(template, selector) {
+    console.log("Component Factory");
     return function (constructor) {
         var mountedElement = document.querySelector(selector);
+        console.log("Component");
         var instance = new constructor();
         if (mountedElement) {
             mountedElement.innerHTML = template;
@@ -27,8 +30,8 @@ var User = /** @class */ (function () {
         console.log("User was created!");
     }
     User = __decorate([
-        Component("<h1>{{name}}</h1>", "#app"),
-        Logging("Logging User")
+        Logging("Logging User"),
+        Component("<h1>{{name}}</h1>", "#app")
     ], User);
     return User;
 }());

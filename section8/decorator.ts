@@ -1,12 +1,15 @@
 function Logging(message: string) {
+    console.log("Logging Factory");
     return function (constructor: Function) {
         console.log(message);
         console.log(constructor);
     };
 }
 function Component(template: string, selector: string) {
+    console.log("Component Factory");
     return function (constructor: { new (): { name: string } }) {
         const mountedElement = document.querySelector(selector);
+        console.log("Component");
         const instance = new constructor();
         if (mountedElement) {
             mountedElement.innerHTML = template;
@@ -15,8 +18,8 @@ function Component(template: string, selector: string) {
     };
 }
 
-@Component("<h1>{{name}}</h1>", "#app")
 @Logging("Logging User")
+@Component("<h1>{{name}}</h1>", "#app")
 class User {
     name = "Quill";
     constructor() {
