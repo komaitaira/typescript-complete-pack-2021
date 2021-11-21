@@ -62,12 +62,35 @@ function MethodLogging(target, propertyKey, descriptor) {
     console.log(propertyKey);
     console.log(descriptor);
 }
+function enumerable(isEnumerable) {
+    return function (target, propertyKey, descriptor) {
+        return {
+            enumerable: isEnumerable
+        };
+    };
+}
+function AccessorLogging(target, propertyKey, descriptor) {
+    console.log("AccessorLogging");
+    console.log(target);
+    console.log(propertyKey);
+    console.log(descriptor);
+}
 var User = /** @class */ (function () {
-    function User(age) {
-        this.age = age;
+    function User(_age) {
+        this._age = _age;
         this.name = "Quill";
         console.log("User was created!");
     }
+    Object.defineProperty(User.prototype, "age", {
+        get: function () {
+            return this._age;
+        },
+        set: function (value) {
+            this._age = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
     User.prototype.greeting = function () {
         console.log("Hello");
     };
@@ -75,6 +98,10 @@ var User = /** @class */ (function () {
         PropertyLogging
     ], User.prototype, "name", void 0);
     __decorate([
+        AccessorLogging
+    ], User.prototype, "age", null);
+    __decorate([
+        enumerable(false),
         MethodLogging
     ], User.prototype, "greeting", null);
     User = __decorate([
