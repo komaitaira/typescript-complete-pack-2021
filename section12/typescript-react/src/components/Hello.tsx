@@ -4,7 +4,7 @@ type HelloProps = {
 }
 
 const Hello = (props: HelloProps) => {
-    return <h1>Hello{props.message}</h1>
+    return <h1>Hello, {props.message}</h1>
 }
 
 export default Hello;
